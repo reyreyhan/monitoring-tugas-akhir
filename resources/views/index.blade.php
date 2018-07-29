@@ -16,34 +16,36 @@
       <section class="content">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-8 col-xs-6 ">
+          <div class="col-lg-10 col-xs-6 ">
 
             <div class="col-lg-12">
 
-              <form action="{{ url('/test2')}}" method="post">
+              <form action="{{ url('/pengajuan/store')}}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('post')}}
 
                 <div class="form-group row">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Judul Tugas Akhir</label>
                   <div class="col-sm-6">
-                    <input required type="text" class="form-control" id="colFormLabel" placeholder="Masukkan Judul Tugas Akhir Anda">
+                    <input required type="text" class="form-control" id="colFormLabel" placeholder="Masukkan Judul Tugas Akhir Anda" name="judul">
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Abstrak</label>
                   <div class="col-sm-6">
-                    <textarea required type="text" class="form-control" id="colFormLabel" placeholder="Ketikkan Abstrak Tugas Akhir Anda" rows="5"></textarea>
+                    <textarea required type="text" class="form-control" id="colFormLabel" placeholder="Ketikkan Abstrak Tugas Akhir Anda" rows="5" name="abstrak"></textarea>
                   </div>
                 </div>
 
                 <div class="form-group row">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Dosen Pembimbing 1</label>
                   <div class="col-sm-6">
-                    <select required class="custom-select">
-                      <option selected>Null</option>
-                      <option value="1">lalalaalalalalalalalalaalalal</option>
+                    <select required class="custom-select" name="dosen1">
+                      <option value="0">Pilih Dosen Pembimbing</option>
+                      @foreach($data as $u)
+                      <option value="{{ $u->nip }}">{{ $u->nama }}</option>
+                      @endforeach
                     </select>
                     </div>
                 </div>
@@ -51,9 +53,11 @@
                 <div class="form-group row">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Dosen Pembimbing 2</label>
                   <div class="col-sm-6">
-                    <select required class="custom-select">
-                      <option selected>Null</option>
-                      <option value="1">lalalaalalalalalalalalaalalal</option>
+                    <select required class="custom-select" name="dosen2">
+                      <option value="0">Pilih Dosen Pembimbing</option>
+                      @foreach($data as $u)
+                      <option value="{{ $u->nip }}">{{ $u->nama }}</option>
+                      @endforeach
                     </select>
                     </div>
                 </div>
@@ -61,19 +65,23 @@
                 <div class="form-group row">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Dosen Pembimbing 3</label>
                   <div class="col-sm-6">
-                    <select class="custom-select">
-                      <option selected>Null</option>
-                      <option value="1">lalalaalalalalalalalalaalalal</option>
+                    <select class="custom-select" name="dosen3">
+                      <option value="0">Pilih Dosen Pembimbing</option>
+                      @foreach($data as $u)
+                      <option value="{{ $u->nip }}">{{ $u->nama }}</option>
+                      @endforeach
                     </select>
                     </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row" name="dosen4">
                   <label for="colFormLabel" class="col-sm-3 col-form-label">Dosen Pembimbing 4</label>
                   <div class="col-sm-6">
-                    <select class="custom-select">
-                      <option selected>Null</option>
-                      <option value="1">lalalaalalalalalalalalaalalal</option>
+                    <select class="custom-select" name="dosen4">
+                      <option value="0">Pilih Dosen Pembimbing</option>
+                      @foreach($data as $u)
+                      <option value="{{ $u->nip }}">{{ $u->nama }}</option>
+                      @endforeach
                     </select>
                     </div>
                 </div>

@@ -3,10 +3,11 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ url('/pengajuan')}}">
           <i class="fa fa-fw fa-dashboard"></i>
           <span class="nav-link-text">Pengajuan Judul TA</span>
         </a>
@@ -18,18 +19,32 @@
           <span class="nav-link-text">Upload Persyaratan</span>
         </a>
         <ul class="sidenav-second-level collapse" id="collapseComponents">
+
           <li>
-            <a href="navbar.html">TPPA</a>
+            <a href="{{url('/tppa')}}">TPPA</a>
           </li>
           <li>
-            <a href="cards.html">Revisi TPPA</a>
+            <a href="{{url('/revtppa')}}">Revisi TPPA</a>
+          </li>
+
+          @if(str_split(session('sessionUser')[0]->nrp)[2] . str_split(session('sessionUser')[0]->nrp)[3] == 10)
+          <li>
+            <a href="">Progress TA</a>
           </li>
           <li>
-            <a href="cards.html">TA</a>
+            <a href="">Revisi Progress TA</a>
+          </li>
+          @endif
+
+
+          <li>
+            <a href="{{url('/ta')}}">TA</a>
           </li>
           <li>
-            <a href="cards.html">Revisi TA</a>
+            <a href="{{url('/revta')}}">Revisi TA</a>
           </li>
+
+
         </ul>
       </li>
       <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
@@ -39,10 +54,15 @@
         </a>
         <ul class="sidenav-second-level collapse" id="collapseExamplePages">
           <li>
-            <a href="login.html">TPPA</a>
+            <a href="{{url('/bimbingantppa')}}">TPPA</a>
           </li>
+          @if(str_split(session('sessionUser')[0]->nrp)[2] . str_split(session('sessionUser')[0]->nrp)[3] == 10)
           <li>
-            <a href="register.html">TA</a>
+            <a href="">Progress TA</a>
+          </li>
+          @endif
+          <li>
+            <a href="{{url('/bimbingan2')}}">TA</a>
           </li>
 
         </ul>

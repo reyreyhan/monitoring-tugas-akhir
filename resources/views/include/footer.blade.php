@@ -1,4 +1,4 @@
-<footer class="sticky-footer">
+<footer class="sticky-footer fixed-position">
   <div class="container">
     <div class="text-center">
       <small>Footer</small>
@@ -41,3 +41,6 @@
 <!-- Custom scripts for this page-->
 <script src="{{asset('template/js/sb-admin-datatables.min.js')}}"></script>
 <script src="{{asset('template/js/sb-admin-charts.min.js')}}"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('js/moment.min.js')}}"></script>
+<script src="{{asset('js/tempusdominus-bootstrap-4.js')}}"></script>
